@@ -4,8 +4,7 @@ import { ChevronLeft } from 'lucide-react';
 import { SceneCard } from '../components/SceneCard';
 import { Navigation } from '../components/Navigation';
 import { useProgressStore } from '../store/progressStore';
-import { scenes, getScenesByCategory } from '../data';
-import type { Scene } from '../types';
+import { getScenesByCategory } from '../data';
 
 export function SceneSelect() {
   const navigate = useNavigate();

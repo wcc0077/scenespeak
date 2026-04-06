@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { ChevronLeft, ChevronRight, Volume2 } from 'lucide-react';
+import { ChevronLeft } from 'lucide-react';
 import { ProgressBar } from '../components/ProgressBar';
 import { AudioPlayer } from '../components/AudioPlayer';
 import { Recorder } from '../components/Recorder';
@@ -11,7 +11,7 @@ export function Vocabulary() {
   const { sceneId } = useParams<{ sceneId: string }>();
   const scene = sceneId ? getSceneById(sceneId) : undefined;
 
-  const [currentSentenceIndex, setCurrentSentenceIndex] = useState(0);
+  const [currentSentenceIndex, _setCurrentSentenceIndex] = useState(0);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
 
   if (!scene) {
@@ -32,7 +32,7 @@ export function Vocabulary() {
   }
 
   const sentences = scene.sentences;
-  const currentSentence = sentences[currentSentenceIndex];
+  void sentences[currentSentenceIndex];
 
   // Flatten all words from all phrases
   const allWords = sentences.flatMap(s =>

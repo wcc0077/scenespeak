@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import type { ProgressStore, SentenceProgress, StudyStats } from '../types';
+import type { ProgressStore, SentenceProgress } from '../types';
 
 interface ProgressState extends ProgressStore {
   completeScene: (sceneId: string) => void;

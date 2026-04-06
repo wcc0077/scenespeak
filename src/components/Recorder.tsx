@@ -7,7 +7,7 @@ interface RecorderProps {
   onRecordingComplete?: () => void;
 }
 
-export function Recorder({ referenceText, onRecordingComplete }: RecorderProps) {
+export function Recorder({ referenceText: _referenceText, onRecordingComplete }: RecorderProps) {
   const { isRecording, audioUrl, startRecording, stopRecording, clearRecording } = useRecorder();
   const [isPlaying, setIsPlaying] = useState(false);
   const handleMouseDown = () => { clearRecording(); startRecording(); };
