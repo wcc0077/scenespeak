@@ -9,10 +9,13 @@
     "preview": "vite preview",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "test": "vitest",
+    "test:ci": "vitest run --coverage",
     "test:coverage": "vitest run --coverage",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
-    "test:e2e:report": "playwright show-report"
+    "test:e2e:report": "playwright show-report",
+    "verify": "npm run lint && npm run test:ci && npm run build",
+    "health-check": "node scripts/health-check.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.303.0",
